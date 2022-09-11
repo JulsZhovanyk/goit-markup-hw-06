@@ -856,6 +856,9 @@ img {
   align-items: center;
   gap: 9px;
 }
+.modal-form-check-field:nth-last-of-type(1) {
+  margin-bottom: 30px;
+}
 .modal-form-check {
   margin-right: 8px;
   appearance: none;
@@ -894,7 +897,6 @@ img {
   height: 1px;
   width: 100%;
   background-color: var(--color-two);
-  /* border-radius: 2px; */
   position: absolute;
   bottom: -1px;
   right: 0;
