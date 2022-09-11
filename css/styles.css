@@ -773,6 +773,11 @@ img {
   width: 11px;
   height: 11px;
   fill: var(--color-six);
+  transition: fill var(--transition-duration-function);
+}
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
+  fill: var(--color-two);
 }
 .modal-title {
   font-weight: 700;
@@ -795,6 +800,7 @@ img {
 }
 .modal-form-input-wrapper {
   position: relative;
+  display: block;
 }
 .modal-form-input {
   width: 100%;
@@ -803,14 +809,27 @@ img {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding-left: 42px;
+  transition: border-color var(--transition-duration-function);
+}
+.modal-form-input:focus + .modal-icon {
+  fill: var(--color-two);
+}
+.modal-form-input:focus,
+.modal-form-message:focus {
+  border-color: var(--color-two);
+  outline: none;
 }
 .modal-icon {
   width: 18px;
   height: 18px;
   position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  transition: fill var(--transition-duration-function);
 }
 .modal-form-message {
   width: 100%;
@@ -820,6 +839,8 @@ img {
   border-radius: 4px;
   padding-top: 12px;
   padding-left: 16px;
+  transition: border-color var(--transition-duration-function);
+  resize: none;
 }
 .modal-form-message::placeholder {
   opacity: 0.5;
@@ -830,9 +851,33 @@ img {
   margin-bottom: 20px;
   text-align: center;
   color: var(--color-seven);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
 }
 .modal-form-check {
   margin-right: 8px;
+}
+.modal-check-custom {
+  width: 16px;
+  height: 15px;
+  fill: var(--color-one);
+  border-radius: 2px;
+  border: 2px solid var(--color-three);
+  cursor: pointer;
+  transition: background var(--transition-duration-function),
+    border var(--transition-duration-function);
+}
+.modal-form-check:checked + .modal-check-custom {
+  background: var(--color-two);
+  border: transparent;
+}
+.modal-check-custom-icon {
+  display: none;
+}
+.modal-form-check:checked + .modal-check-custom .modal-check-custom-icon {
+  display: block;
 }
 .modal-check-link {
   color: var(--color-two);
@@ -856,7 +901,7 @@ img {
 }
 .modal-form-button:hover,
 .modal-form-button:focus {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   background-color: var(--color-eight);
 }
 
