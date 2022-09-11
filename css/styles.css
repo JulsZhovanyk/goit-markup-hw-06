@@ -858,6 +858,8 @@ img {
 }
 .modal-form-check {
   margin-right: 8px;
+  appearance: none;
+  position: absolute;
 }
 .modal-check-custom {
   width: 16px;
@@ -873,6 +875,9 @@ img {
   background: var(--color-two);
   border: transparent;
 }
+.modal-form-check:focus + .modal-check-custom {
+  box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.5);
+}
 .modal-check-custom-icon {
   display: none;
 }
@@ -881,6 +886,18 @@ img {
 }
 .modal-check-link {
   color: var(--color-two);
+  text-decoration: none;
+  position: relative;
+}
+.modal-check-link::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-two);
+  /* border-radius: 2px; */
+  position: absolute;
+  bottom: -1px;
+  right: 0;
 }
 .modal-form-button {
   background: var(--color-two);
@@ -898,6 +915,7 @@ img {
   color: var(--color-one);
   transition: box-shadow var(--transition-duration-function),
     background-color var(--transition-duration-function);
+  align-self: center;
 }
 .modal-form-button:hover,
 .modal-form-button:focus {
